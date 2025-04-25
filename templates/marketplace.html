@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InsurAI - Insurance Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/marketplace.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <span class="logo-text">InsurAI</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('chatbot') }}">AI Assistant</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Marketplace Banner -->
+  <section class="marketplace-banner">
+    <div class="container">
+      <h1>Insurance Marketplace</h1>
+      <p>Browse our selection of AI-recommended insurance plans tailored to your needs. Get instant quotes and purchase coverage with just a few clicks.</p>
+    </div>
+  </section>
+
+  <!-- Marketplace Section -->
+  <section class="marketplace-products" id="marketplace">
+    <div class="container">
+      <h2>Featured Insurance Plans</h2>
+      
+      <!-- Category Filter -->
+      
+
+      <div class="insurance-grid">
+        <!-- Health Insurance Cards -->
+        <div class="insurance-card" data-category="health">
+          <div class="card-image">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div class="card-content">
+            <h3>Essential Health Plan</h3>
+            <p>Affordable coverage for everyday health needs with access to our network of providers.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(124 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$149</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="1" data-product="Essential Health Plan" data-price="149">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Essential Health Plan Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$20 copay for primary care visits</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$2,500 deductible</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Preventive care covered 100%</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Prescription drug coverage</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=1" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="1" data-product="Essential Health Plan" data-price="149">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="insurance-card" data-category="health">
+          <div class="popular-tag">Popular</div>
+          <div class="card-image">
+            <i class="fas fa-notes-medical"></i>
+          </div>
+          <div class="card-content">
+            <h3>Premium Health Plan</h3>
+            <p>Comprehensive coverage with lower out-of-pocket costs and expanded benefits.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(217 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$249</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="2" data-product="Premium Health Plan" data-price="249">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Premium Health Plan Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$10 copay for primary care visits</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$1,000 deductible</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Includes vision and dental coverage</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$5,000 max out-of-pocket</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=2" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="2" data-product="Premium Health Plan" data-price="249">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto Insurance Cards -->
+        <div class="insurance-card" data-category="auto">
+          <div class="card-image">
+            <i class="fas fa-car"></i>
+          </div>
+          <div class="card-content">
+            <h3>Basic Auto Coverage</h3>
+            <p>Liability protection that meets state requirements with optional comprehensive coverage.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(89 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$89</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="3" data-product="Basic Auto Coverage" data-price="89">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Basic Auto Coverage Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Bodily injury: $25k/$50k</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Property damage: $25k</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Optional comp & collision</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>24/7 roadside assistance</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=3" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="3" data-product="Basic Auto Coverage" data-price="89">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="insurance-card" data-category="auto">
+          <div class="popular-tag">Popular</div>
+          <div class="card-image">
+            <i class="fas fa-car-crash"></i>
+          </div>
+          <div class="card-content">
+            <h3>Premium Auto Protection</h3>
+            <p>Full coverage with high limits, low deductibles, and additional benefits for peace of mind.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(152 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$139</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="4" data-product="Premium Auto Protection" data-price="139">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Premium Auto Protection Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Bodily injury: $100k/$300k</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Property damage: $100k</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$500 comp & collision deductible</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Rental car reimbursement</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=4" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="4" data-product="Premium Auto Protection" data-price="139">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home Insurance Cards -->
+        <div class="insurance-card" data-category="home">
+          <div class="card-image">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="card-content">
+            <h3>Standard Home Protection</h3>
+            <p>Protect your home and belongings with our standard coverage for homeowners.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <span>(78 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$95</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="5" data-product="Standard Home Protection" data-price="95">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Standard Home Protection Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Dwelling coverage</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Personal property protection</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$1,000 deductible</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Liability coverage: $300,000</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=5" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="5" data-product="Standard Home Protection" data-price="95">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="insurance-card" data-category="home">
+          <div class="popular-tag">Popular</div>
+          <div class="card-image">
+            <i class="fas fa-house-damage"></i>
+          </div>
+          <div class="card-content">
+            <h3>Premium Home Shield</h3>
+            <p>Enhanced protection with additional coverage for valuables, natural disasters, and more.</p>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(104 reviews)</span>
+            </div>
+            <div class="card-price">
+              <div>
+                <span class="price-value">$179</span>
+                <span class="price-period">/month</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-small add-to-cart" data-id="6" data-product="Premium Home Shield" data-price="179">Buy Now</a>
+            </div>
+          </div>
+          <div class="insurance-popup">
+            <h4 class="popup-title">Premium Home Shield Details</h4>
+            <div class="popup-features">
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Enhanced dwelling coverage</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Extended personal property protection</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>$500 deductible</span>
+              </div>
+              <div class="popup-feature">
+                <i class="fas fa-check"></i>
+                <span>Liability coverage: $500,000</span>
+              </div>
+            </div>
+            <div class="popup-buttons">
+              <a href="plan-details.html?id=6" class="btn btn-secondary btn-small">View Details</a>
+              <a href="#" class="btn btn-white btn-small add-to-cart" data-id="6" data-product="Premium Home Shield" data-price="179">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+ 
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Your Cart</h3>
+        <button class="close-modal" id="closeCartModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="cartItems">
+          <!-- Cart items will be inserted here via JavaScript -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0</span>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-secondary" id="clearCart">Clear Cart</button>
+          <button class="btn btn-primary" id="checkout">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Login to Your Account</h3>
+        <button class="close-modal" id="closeLoginModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="rememberMe">
+              <label for="rememberMe">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <div class="login-divider">
+          <span>or</span>
+        </div>
+        <div class="social-login">
+          <button class="btn btn-social btn-google">
+            <i class="fab fa-google"></i> Continue with Google
+          </button>
+          <button class="btn btn-social btn-facebook">
+            <i class="fab fa-facebook-f"></i> Continue with Facebook
+          </button>
+        </div>
+        <div class="signup-link">
+          Don't have an account? <a href="#" id="showSignupBtn">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create an Account</h3>
+        <button class="close-modal" id="closeSignupModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input type="email" id="signupEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" placeholder="Create a password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+          </div>
+          <div class="form-options">
+            <div class="terms-check">
+              <input type="checkbox" id="termsAgree" required>
+              <label for="termsAgree">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        </form>
+        <div class="login-divider">
+          <span>or</span>
+        </div>
+        <div class="social-login">
+          <button class="btn btn-social btn-google">
+            <i class="fab fa-google"></i> Sign up with Google
+          </button>
+          <button class="btn btn-social btn-facebook">
+            <i class="fab fa-facebook-f"></i> Sign up with Facebook
+          </button>
+        </div>
+        <div class="signup-link">
+          Already have an account? <a href="#" id="showLoginBtn">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <!-- Footer content -->
+      <div class="footer-main">
+        <div class="footer-company">
+          <div class="footer-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span class="footer-logo-text">InsurAI</span>
+          </div>
+          <p class="footer-description">Your AI-Powered Insurance Marketplace. Find, compare, and purchase the perfect insurance plan for your needs.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-container">
+          <div class="footer-links-column">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">Health Insurance</a></li>
+              <li><a href="#">Auto Insurance</a></li>
+              <li><a href="#">Home Insurance</a></li>
+              <li><a href="#">Life Insurance</a></li>
+              <li><a href="#">Travel Insurance</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Claims Process</a></li>
+              <li><a href="#">Insurance Guide</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Licenses</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2025 InsurAI. All rights reserved.</p>
+        <div class="footer-info">
+          <a href="#">Data Protection</a>
+          <a href="#">Accessibility</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -28,6 +28,10 @@ def index():
 def chatbot():
     return render_template('chatbot.html')
 
+@app.route('/marketplace')
+def marketplace():
+    return render_template('marketplace.html')
+
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
