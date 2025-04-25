@@ -28,6 +28,7 @@ def index():
 def chatbot():
     return render_template('chatbot.html')
 
+
 @app.route('/api/chat', methods=['POST'])
 def chat():
     global chat_history
@@ -65,8 +66,8 @@ def chat():
         
         if len(chat_history) > 12:
             chat_history = [
-                chat_history[0],  # Keep system prompt
-                *chat_history[-10:]  # Keep last 10 messages
+                chat_history[0],  
+                *chat_history[-10:] 
             ]
         
         return jsonify({
