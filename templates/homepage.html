@@ -15,7 +15,7 @@
         <svg xmlns="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-3584-622f-9e09-f53faa9914ed/raw?se=2025-04-25T08%3A15%3A30Z&sp=r&sv=2024-08-04&sr=b&scid=287b6552-7b46-5a68-8ebf-eea8829ce8d4&skoid=d958ec58-d47c-4d2f-a9f2-7f3e03fdcf72&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-25T00%3A07%3A04Z&ske=2025-04-26T00%3A07%3A04Z&sks=b&skv=2024-08-04&sig=99o7W8acZvnYALLII6iBZKhVb4mE10NsfnC40bFP1FA%3D" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
-        <span class="logo-text">InsurAI</span>
+        <span class="logo-text"><a href="{{ url_for('index') }}">InsurAI</a></span>
       </div>
       <nav>
         <ul>
@@ -37,6 +37,7 @@
       </div>
       <div class="hero-image">
         <img src="{{ url_for('static', filename='media/img/logo.svg') }}" alt="AI Insurance Assistant">
+        
       </div>
     </div>
   </section>
