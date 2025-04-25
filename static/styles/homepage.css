@@ -321,6 +321,7 @@
    height: 1.5rem;
    color: #3b82f6;
  }
+
  
  /* Why Us Section */
  .why-us {
@@ -378,13 +379,14 @@
  /* Footer */
  footer {
    background-color: #1f2937;
-   color: #9ca3af;
-   padding: 3rem 0;
+   color: white;
+   padding: 0.1rem 0;
  }
  
  .footer-container {
    display: flex;
-   flex-direction: column;
+   flex-direction: row-reverse;
+   color: white;
  }
  
  .footer-main {
@@ -402,7 +404,6 @@
  .footer-logo svg {
    width: 2rem;
    height: 2rem;
-   color: #60a5fa;
  }
  
  .footer-logo-text {
@@ -410,6 +411,9 @@
    font-size: 1.25rem;
    font-weight: 700;
    color: white;
+ }
+ .footer-container p{
+  color: grey;
  }
  
  .footer-copyright {
