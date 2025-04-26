@@ -189,5 +189,7 @@ def process_pdf():
             "message": "An error occurred while processing your PDF file. Please try again later."
         }), 500
 
+
+
 if __name__ == '__main__':
     app.run(debug=True)
