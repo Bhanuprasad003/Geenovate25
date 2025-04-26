@@ -1,4 +1,3 @@
-/* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
 * {
@@ -114,7 +113,6 @@ nav ul li a:hover {
   color: #3b82f6;
 }
 
-/* Chat Section */
 .chat-section {
   flex: 1;
   display: flex;
@@ -131,7 +129,6 @@ nav ul li a:hover {
   gap: 2rem;
 }
 
-/* Chat Widget */
 .chat-widget {
   flex: 2;
   display: flex;
@@ -290,7 +287,6 @@ nav ul li a:hover {
   }
 }
 
-/* Sidebar */
 .chat-sidebar {
   flex: 1;
   background-color: white;
@@ -365,7 +361,6 @@ nav ul li a:hover {
   color: #3b82f6;
 }
 
-/* Footer */
 footer {
   background-color: #1f2937;
   color: #9ca3af;
@@ -411,7 +406,6 @@ footer {
   color: white;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
   .chat-container {
     flex-direction: column;

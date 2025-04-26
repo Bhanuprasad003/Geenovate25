@@ -7,20 +7,16 @@ from dotenv import load_dotenv
 import PyPDF2
 import re
 
-# Load environment variables
 load_dotenv()
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
-# Configuration
 GROQ_API_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions'
-GROQ_API_KEY = os.getenv('GROQ_API_KEY')  # Store your API key in a .env file
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
-# Set upload configuration
 app.config['UPLOAD_FOLDER'] = tempfile.gettempdir()
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB limit
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
-# Initial system prompt
 chat_history = [
     {
         "role": "system",
@@ -28,7 +24,6 @@ chat_history = [
     }
 ]
 
-# PDF analysis prompt template
 PDF_ANALYSIS_TEMPLATE = """
 You are InsurAI, an expert in analyzing insurance documents. I'm going to provide you with text extracted from an insurance document. Please analyze it carefully and provide the following:
 
@@ -56,7 +51,6 @@ def extract_text_from_pdf(pdf_path):
                 page = reader.pages[page_num]
                 text += page.extract_text() + "\n\n"
                 
-        # Clean up the text (remove excessive whitespace, etc.)
         text = re.sub(r'\s+', ' ', text).strip()
         return text
     except Exception as e:
@@ -109,10 +103,8 @@ def chat():
         data = request.json
         user_message = data.get('message', '')
         
-        # Add user message to chat history
         chat_history.append({"role": "user", "content": user_message})
         
-        # Call Groq API
         response = requests.post(
             GROQ_API_ENDPOINT,
             headers={
@@ -133,13 +125,12 @@ def chat():
         result = response.json()
         ai_response = result['choices'][0]['message']['content']
         
-        # Add AI response to history and limit size
         chat_history.append({"role": "assistant", "content": ai_response})
         
         if len(chat_history) > 12:
             chat_history = [
-                chat_history[0],  # Keep system prompt
-                *chat_history[-10:]  # Keep last 10 messages
+                chat_history[0], 
+                *chat_history[-10:]  
             ]
         
         return jsonify({
@@ -166,11 +157,9 @@ def process_pdf():
             return jsonify({"status": "error", "message": "No file selected"})
             
         if file and file.filename.endswith('.pdf'):
-            # Save the file temporarily
             temp_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
             file.save(temp_path)
             
-            # Extract text from PDF
             pdf_text = extract_text_from_pdf(temp_path)
             
             if not pdf_text or pdf_text.strip() == "":
@@ -180,13 +169,10 @@ def process_pdf():
                     "message": "Could not extract text from the PDF. The file may be encrypted, password-protected, or contain only images."
                 })
             
-            # Create prompt with PDF text as context
             prompt = PDF_ANALYSIS_TEMPLATE.format(pdf_text=pdf_text)
             
-            # Send to LLM for analysis
             analysis_result = send_to_llm(prompt)
             
-            # Clean up the temporary file
             os.remove(temp_path)
             
             return jsonify({

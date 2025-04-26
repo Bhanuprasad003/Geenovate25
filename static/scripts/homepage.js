@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (chatNowBtn) {
     chatNowBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "/marketplace"; // redirect to chatbot.html via Flask
+      window.location.href = "/marketplace";
     });
   }
 });
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (chatNowBtn) {
     chatNowBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = "/chatbot"; // redirect to chatbot.html via Flask
+      window.location.href = "/chatbot";
     });
   }
 });
