@@ -189,5 +189,7 @@ def process_pdf():
             "message": "An error occurred while processing your PDF file. Please try again later."
         }), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+if _name_ == "_main_":
+    port = int(os.environ.get("PORT", 5000))  # Render sets this
+    app.run(host="0.0.0.0", port=port)
