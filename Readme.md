@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>InsurAI - AI Insurance Assistant</title>
-</head>
-<body>
 
 <h1>🛡️🤖 InsurAI - Your AI Insurance Assistant</h1>
 
