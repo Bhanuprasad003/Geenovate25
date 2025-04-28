@@ -43,11 +43,9 @@ Built with passion during the <b>Geenovate 2025</b> 36-hour hackathon at <b>Geet
 
 <p>Grateful for the outstanding collaboration and efforts of my team! 🤝</p>
 
-<h2>📸 Screenshots</h2>
-<p>(Add screenshots or a short demo GIF here)</p>
 
 <h2>🔗 Live Demo</h2>
-<p>(Link if deployed — optional)</p>
+<p>https://sasukeurahara.pythonanywhere.com/ </p>
 
 <h2>📂 Installation and Setup</h2>
 
