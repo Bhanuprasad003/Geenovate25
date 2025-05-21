@@ -87,6 +87,5 @@ Built with passion during the <b>Geenovate 2025</b> 36-hour hackathon at <b>Geet
 <blockquote>
   <p><i>"Simplifying insurance decisions, one conversation at a time with InsurAI."</i></p>
 </blockquote>
-
 </body>
 </html>
